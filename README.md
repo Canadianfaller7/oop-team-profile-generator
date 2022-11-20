@@ -1,1 +1,0 @@
-# oop-team-profile-generator
