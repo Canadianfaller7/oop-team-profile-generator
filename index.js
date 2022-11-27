@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
-const createManager = require('./src/generateManager')
+const createManager = require('./src/makeEmployeeObjects/makeManager')
+const managerQuestions = require('./src/generateManager');
 const createEmployee = require('./src/generateEmployees')
 const addTeamMembers = require('./src/promptEmployee')
 
@@ -9,7 +10,7 @@ const myTeamArray = []
 
 const init = async () => {
 
-  const manager = await inquirer.prompt(createManager)
+  const manager = await inquirer.prompt(managerQuestions)
   .then(answers => createManager(answers));
   myTeamArray.push(manager);
 
