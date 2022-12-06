@@ -16,20 +16,6 @@ const getManager = [
   },
   {
     type: 'input',
-    name: 'email',
-    message: 'Please enter the Managers email: ',
-    validate: input => {
-      if(input){
-        return true;
-      }
-      else {
-        console.log('Must have Managers email.');
-        return false
-      }
-    }
-  },
-  {
-    type: 'input',
     name: 'id',
     message: 'Please enter Managers id #: ',
     validate: input => {
@@ -38,6 +24,20 @@ const getManager = [
       }
       else {
         console.log('Must have Managers id #.');
+        return false
+      }
+    }
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Please enter the Managers email: ',
+    validate: input => {
+      if(input){
+        return true;
+      }
+      else {
+        console.log('Must have Managers email.');
         return false
       }
     }

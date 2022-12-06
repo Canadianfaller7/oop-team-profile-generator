@@ -54,7 +54,7 @@ const generateIntern = intern => {
   `;
 }
 
-generateHTML = data => {
+const generateHTML = data => {
   htmlCardArray = []; 
   for (let i = 0; i < data.length; i++) {
     const employee = data[i];
@@ -83,7 +83,7 @@ generateHTML = data => {
 }
 
 // generate html page 
-const generateTeamPage = function (employeeCards) {   
+const generateTeamPage = employeeCards => {   
   return`
 <!DOCTYPE html>
 <html lang="en">
@@ -120,4 +120,4 @@ const generateTeamPage = function (employeeCards) {
 }
 
 // export to index
-module.exports = generateHTML; 
+module.exports = generateHTML;
