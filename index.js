@@ -29,8 +29,8 @@ const makeManager = () => {
       type: 'input',
       name: 'id',
       message: "Please enter the manager's ID.",
-      validate: nameInput => {
-        if  (isNaN(nameInput)) {
+      validate: idInput => {
+        if  (isNaN(idInput)) {
           console.log ("Please enter the manager's ID!")
           return false; 
         } else {
@@ -56,8 +56,8 @@ const makeManager = () => {
       type: 'input',
       name: 'officeNumber',
       message: "Please enter the manager's office number",
-      validate: nameInput => {
-        if  (isNaN(nameInput)) {
+      validate: officeNumInput => {
+        if  (isNaN(officeNumInput)) {
           console.log ('Please enter an office number!')
           return false; 
         } else {
@@ -100,8 +100,8 @@ const promptEmployee = () => {
       type: 'input',
       name: 'id',
       message: "Please enter the employee's ID.",
-      validate: nameInput => {
-        if  (isNaN(nameInput)) {
+      validate: idInput => {
+        if (isNaN(idInput)) {
           console.log ("Please enter the employee's ID!")
           return false; 
         } else {
@@ -128,8 +128,8 @@ const promptEmployee = () => {
       name: 'github',
       message: "Please enter the employee's github username.",
       when: (input) => input.role === "Engineer",
-      validate: nameInput => {
-        if (nameInput ) {
+      validate: githubInput => {
+        if (githubInput ) {
           return true;
         } else {
           console.log ("Please enter the employee's github username!")
@@ -141,8 +141,8 @@ const promptEmployee = () => {
       name: 'school',
       message: "Please enter the intern's school",
       when: (input) => input.role === "Intern",
-      validate: nameInput => {
-        if (nameInput) {
+      validate: schoolInput => {
+        if (schoolInput) {
           return true;
         } else {
           console.log ("Please enter the intern's school!")
@@ -151,7 +151,7 @@ const promptEmployee = () => {
     },
     {
       type: 'confirm',
-      name: 'confirmpromptEmployee',
+      name: 'confirmEmployee',
       message: 'Would you like to add more team members?',
       default: false
     }
@@ -159,7 +159,7 @@ const promptEmployee = () => {
   
   .then(employeeData => {
         // data for employee types 
-    let { name, id, email, role, github, school, confirmpromptEmployee } = employeeData; 
+    let { name, id, email, role, github, school, confirmEmployee } = employeeData; 
     let employee; 
 
     if (role === "Engineer") {
@@ -174,7 +174,7 @@ const promptEmployee = () => {
 
     myTeamArray.push(employee); 
 
-    if (confirmpromptEmployee) {
+    if (confirmEmployee) {
       return promptEmployee(myTeamArray); 
     } else {
       return myTeamArray;
