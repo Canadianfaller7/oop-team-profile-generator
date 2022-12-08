@@ -52,7 +52,7 @@ const makeManager = () => {
         }
       }
     },
-  {
+    {
       type: 'input',
       name: 'officeNumber',
       message: "Please enter the manager's office number",
@@ -189,7 +189,7 @@ const writeFile = data => {
             return;
         // when the profile has been created 
         } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
+            console.log("Your team profile has been successfully created! Please check out the index.html in the dist folder!")
         }
     })
 }; 
